@@ -1,0 +1,1266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ROYAL FITNESS - Gym</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#080808;
+    color:white;
+}
+
+
+/* ================= NAVBAR ================= */
+
+header{
+    position:absolute;
+    top:0;
+    left:0;
+
+    width:100%;
+
+    padding:22px 7%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    z-index:100;
+
+    background:rgba(0,0,0,0.5);
+}
+
+.logo{
+    font-size:25px;
+    font-weight:900;
+}
+
+.logo span{
+    color:#ff3c00;
+}
+
+nav{
+    display:flex;
+    align-items:center;
+    gap:25px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:bold;
+
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#ff3c00;
+}
+
+.login-btn{
+    border:1px solid #ff3c00;
+    padding:10px 20px;
+}
+
+.user{
+    color:#ff3c00;
+}
+
+
+/* ================= HERO ================= */
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+    align-items:center;
+
+    padding:120px 8%;
+
+    background:
+    linear-gradient(
+        90deg,
+        rgba(0,0,0,.95),
+        rgba(0,0,0,.4)
+    ),
+    url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=2000&q=80");
+
+    background-size:cover;
+    background-position:center;
+}
+
+.hero-content{
+    max-width:700px;
+}
+
+.hero-small{
+    color:#ff3c00;
+    letter-spacing:4px;
+    font-size:14px;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:75px;
+    line-height:1;
+
+    margin-bottom:25px;
+}
+
+.hero h1 span{
+    color:#ff3c00;
+}
+
+.hero p{
+    color:#ccc;
+    font-size:17px;
+    line-height:1.7;
+}
+
+.buttons{
+    display:flex;
+    gap:15px;
+    margin-top:30px;
+}
+
+.btn{
+    display:inline-block;
+
+    background:#ff3c00;
+    color:white;
+
+    padding:15px 30px;
+
+    text-decoration:none;
+    font-weight:bold;
+
+    border-radius:3px;
+
+    transition:.3s;
+}
+
+.btn:hover{
+    background:white;
+    color:black;
+}
+
+.btn-outline{
+    background:transparent;
+    border:1px solid white;
+}
+
+
+/* ================= SECTIONS ================= */
+
+section{
+    padding:100px 8%;
+}
+
+.title{
+    color:#ff3c00;
+    font-size:14px;
+    letter-spacing:3px;
+    font-weight:bold;
+
+    margin-bottom:15px;
+}
+
+section h2{
+    font-size:45px;
+    margin-bottom:25px;
+}
+
+section h2 span{
+    color:#ff3c00;
+}
+
+
+/* ================= ABOUT ================= */
+
+.about{
+    background:#101010;
+
+    display:flex;
+    justify-content:space-between;
+
+    gap:60px;
+}
+
+.about-text{
+    max-width:600px;
+}
+
+.about-text p{
+    color:#aaa;
+    line-height:1.8;
+    margin-bottom:15px;
+}
+
+.stats{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:20px;
+
+    min-width:350px;
+}
+
+.stat{
+
+    background:#181818;
+
+    padding:30px;
+
+    text-align:center;
+
+    border-bottom:3px solid #ff3c00;
+}
+
+.stat h3{
+    color:#ff3c00;
+    font-size:35px;
+}
+
+.stat p{
+    margin-top:8px;
+    color:#aaa;
+}
+
+
+/* ================= PROGRAMS ================= */
+
+.programs{
+    text-align:center;
+}
+
+.cards{
+
+    margin-top:50px;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:20px;
+}
+
+.card{
+
+    background:#151515;
+
+    padding:40px 25px;
+
+    border:1px solid #252525;
+
+    transition:.3s;
+}
+
+.card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:#ff3c00;
+}
+
+.icon{
+    font-size:45px;
+    margin-bottom:20px;
+}
+
+.card h3{
+    margin-bottom:15px;
+}
+
+.card p{
+    color:#999;
+    line-height:1.6;
+}
+
+
+/* ================= PLANS ================= */
+
+.plans{
+    background:#101010;
+    text-align:center;
+}
+
+.plans-container{
+
+    margin-top:50px;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:25px;
+}
+
+.plan{
+
+    background:#181818;
+
+    padding:45px 30px;
+
+    border:1px solid #292929;
+
+    position:relative;
+}
+
+.plan h3{
+    font-size:25px;
+    margin-bottom:20px;
+}
+
+.price{
+
+    color:#ff3c00;
+
+    font-size:42px;
+
+    font-weight:bold;
+
+    margin-bottom:25px;
+}
+
+.plan p{
+
+    color:#aaa;
+
+    margin:15px 0;
+}
+
+.plan .btn{
+    margin-top:20px;
+}
+
+.popular{
+    border:2px solid #ff3c00;
+}
+
+.badge{
+
+    position:absolute;
+
+    top:0;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    background:#ff3c00;
+
+    padding:7px 20px;
+
+    font-size:12px;
+
+    font-weight:bold;
+}
+
+
+/* ================= TRAINERS ================= */
+
+.trainers{
+    text-align:center;
+}
+
+.trainer-container{
+
+    margin-top:50px;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:25px;
+}
+
+.trainer{
+
+    background:#151515;
+
+    padding-bottom:25px;
+}
+
+.trainer img{
+
+    width:100%;
+    height:300px;
+
+    object-fit:cover;
+}
+
+.trainer h3{
+    margin-top:20px;
+}
+
+.trainer p{
+    color:#ff3c00;
+    margin-top:8px;
+}
+
+
+/* ================= CONTACT ================= */
+
+.contact{
+
+    text-align:center;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.8),
+        rgba(0,0,0,.8)
+    ),
+    url("https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=1800&q=80");
+
+    background-size:cover;
+    background-position:center;
+}
+
+.contact p{
+    color:#ccc;
+    margin:15px;
+}
+
+
+/* ================= AUTH ================= */
+
+.auth-section{
+
+    min-height:100vh;
+
+    display:none;
+
+    justify-content:center;
+    align-items:center;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.85),
+        rgba(0,0,0,.85)
+    ),
+    url("https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=1800&q=80");
+
+    background-size:cover;
+}
+
+.auth-box{
+
+    width:400px;
+
+    background:#151515;
+
+    padding:45px;
+
+    border:1px solid #333;
+
+    text-align:center;
+}
+
+.auth-box h2{
+    font-size:30px;
+    margin-bottom:10px;
+}
+
+.auth-box > p{
+    color:#888;
+    margin-bottom:25px;
+}
+
+.auth-box form{
+
+    display:flex;
+    flex-direction:column;
+
+    gap:15px;
+}
+
+.auth-box input{
+
+    width:100%;
+
+    padding:15px;
+
+    background:#222;
+
+    color:white;
+
+    border:1px solid #333;
+
+    outline:none;
+}
+
+.auth-box input:focus{
+    border-color:#ff3c00;
+}
+
+.auth-box button{
+
+    padding:15px;
+
+    border:none;
+
+    background:#ff3c00;
+
+    color:white;
+
+    font-weight:bold;
+
+    cursor:pointer;
+}
+
+.auth-box button:hover{
+    background:white;
+    color:black;
+}
+
+.switch{
+
+    margin-top:20px;
+
+    color:#888;
+}
+
+.switch span{
+
+    color:#ff3c00;
+
+    cursor:pointer;
+}
+
+.close{
+
+    display:block;
+
+    margin-top:20px;
+
+    color:#aaa;
+
+    cursor:pointer;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer{
+
+    padding:40px;
+
+    text-align:center;
+
+    background:#050505;
+}
+
+footer p{
+    color:#666;
+    margin-top:10px;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:900px){
+
+    header{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    nav{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .hero h1{
+        font-size:55px;
+    }
+
+    .cards{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .plans-container{
+        grid-template-columns:1fr;
+    }
+
+    .trainer-container{
+        grid-template-columns:1fr;
+    }
+
+    .about{
+        flex-direction:column;
+    }
+}
+
+
+@media(max-width:600px){
+
+    .hero h1{
+        font-size:42px;
+    }
+
+    .buttons{
+        flex-direction:column;
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    .stats{
+        min-width:100%;
+    }
+
+    .auth-box{
+        width:90%;
+        padding:30px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<header>
+
+    <div class="logo">
+        ROYAL<span>FITNESS</span>
+    </div>
+
+    <nav>
+
+        <a href="#home">Home</a>
+
+        <a href="#about">About</a>
+
+        <a href="#programs">Programs</a>
+
+        <a href="#plans">Plans</a>
+
+        <a href="#trainers">Trainers</a>
+
+        <a href="#contact">Contact</a>
+
+        {% if session.get("username") %}
+
+            <span class="user">
+                Hi, {{ session["username"] }}
+            </span>
+
+            <a href="/logout" class="login-btn">
+                Logout
+            </a>
+
+        {% else %}
+
+            <a href="#login" class="login-btn"
+               onclick="showLogin()">
+                Login
+            </a>
+
+        {% endif %}
+
+    </nav>
+
+</header>
+
+
+<!-- ================= HOME ================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="hero-small">
+            WELCOME TO ROYAL FITNESS
+        </div>
+
+        <h1>
+            BUILD YOUR
+            <span>STRONGEST</span>
+            SELF
+        </h1>
+
+        <p>
+            Train harder. Get stronger. Become the best
+            version of yourself with professional trainers,
+            modern equipment and powerful workouts.
+        </p>
+
+        <div class="buttons">
+
+            <a href="#plans" class="btn">
+                JOIN NOW
+            </a>
+
+            <a href="#programs"
+               class="btn btn-outline">
+                EXPLORE PROGRAMS
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section class="about" id="about">
+
+    <div class="about-text">
+
+        <div class="title">
+            ABOUT US
+        </div>
+
+        <h2>
+            YOUR FITNESS.
+            <span>OUR PASSION.</span>
+        </h2>
+
+        <p>
+            Royal Fitness is a modern gym designed for people
+            who want to improve their strength, fitness and
+            lifestyle.
+        </p>
+
+        <p>
+            We provide professional trainers, modern gym
+            equipment and personalized workout programs.
+        </p>
+
+    </div>
+
+
+    <div class="stats">
+
+        <div class="stat">
+            <h3>500+</h3>
+            <p>Members</p>
+        </div>
+
+        <div class="stat">
+            <h3>10+</h3>
+            <p>Trainers</p>
+        </div>
+
+        <div class="stat">
+            <h3>50+</h3>
+            <p>Equipment</p>
+        </div>
+
+        <div class="stat">
+            <h3>5+</h3>
+            <p>Years Experience</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PROGRAMS ================= -->
+
+<section class="programs" id="programs">
+
+    <div class="title">
+        OUR PROGRAMS
+    </div>
+
+    <h2>
+        TRAIN LIKE A
+        <span>CHAMPION</span>
+    </h2>
+
+
+    <div class="cards">
+
+        <div class="card">
+
+            <div class="icon">💪</div>
+
+            <h3>
+                Strength Training
+            </h3>
+
+            <p>
+                Build muscle and increase your overall
+                strength with professional workouts.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">🏃</div>
+
+            <h3>
+                Cardio Training
+            </h3>
+
+            <p>
+                Improve stamina and burn calories with
+                high intensity cardio sessions.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">🔥</div>
+
+            <h3>
+                Fat Loss
+            </h3>
+
+            <p>
+                Customized workout programs to help you
+                reach your fitness goals.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">🏋️</div>
+
+            <h3>
+                Personal Training
+            </h3>
+
+            <p>
+                Get one-on-one guidance from experienced
+                professional trainers.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PLANS ================= -->
+
+<section class="plans" id="plans">
+
+    <div class="title">
+        MEMBERSHIP
+    </div>
+
+    <h2>
+        CHOOSE YOUR
+        <span>PLAN</span>
+    </h2>
+
+
+    <div class="plans-container">
+
+
+        <div class="plan">
+
+            <h3>Basic</h3>
+
+            <div class="price">
+                ₹999
+            </div>
+
+            <p>✔ Gym Access</p>
+
+            <p>✔ Cardio Area</p>
+
+            <p>✔ Basic Equipment</p>
+
+            <p>✖ Personal Trainer</p>
+
+            <a href="#login"
+               onclick="showLogin()"
+               class="btn">
+                JOIN NOW
+            </a>
+
+        </div>
+
+
+        <div class="plan popular">
+
+            <div class="badge">
+                POPULAR
+            </div>
+
+            <h3>Premium</h3>
+
+            <div class="price">
+                ₹1,999
+            </div>
+
+            <p>✔ Unlimited Gym Access</p>
+
+            <p>✔ All Equipment</p>
+
+            <p>✔ Personal Trainer</p>
+
+            <p>✔ Diet Plan</p>
+
+            <a href="#login"
+               onclick="showLogin()"
+               class="btn">
+                JOIN NOW
+            </a>
+
+        </div>
+
+
+        <div class="plan">
+
+            <h3>VIP</h3>
+
+            <div class="price">
+                ₹2,999
+            </div>
+
+            <p>✔ Everything in Premium</p>
+
+            <p>✔ Private Trainer</p>
+
+            <p>✔ Custom Diet</p>
+
+            <p>✔ Priority Support</p>
+
+            <a href="#login"
+               onclick="showLogin()"
+               class="btn">
+                JOIN NOW
+            </a>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ================= TRAINERS ================= -->
+
+<section class="trainers" id="trainers">
+
+    <div class="title">
+        OUR TRAINERS
+    </div>
+
+    <h2>
+        MEET OUR
+        <span>EXPERTS</span>
+    </h2>
+
+
+    <div class="trainer-container">
+
+
+        <div class="trainer">
+
+            <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=700&q=80">
+
+            <h3>
+                Alex Johnson
+            </h3>
+
+            <p>
+                Strength Coach
+            </p>
+
+        </div>
+
+
+        <div class="trainer">
+
+            <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?auto=format&fit=crop&w=700&q=80">
+
+            <h3>
+                Sarah Williams
+            </h3>
+
+            <p>
+                Fitness Trainer
+            </p>
+
+        </div>
+
+
+        <div class="trainer">
+
+            <img src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?auto=format&fit=crop&w=700&q=80">
+
+            <h3>
+                Mike Anderson
+            </h3>
+
+            <p>
+                Personal Trainer
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section class="contact" id="contact">
+
+    <div class="title">
+        CONTACT US
+    </div>
+
+    <h2>
+        START YOUR
+        <span>FITNESS JOURNEY</span>
+    </h2>
+
+    <p>
+        👤 Gym Owner: Rohit Rana
+    </p>
+
+    <p>
+        📍 Dhaulana, Hapur, UP
+    </p>
+
+    <p>
+        📞 +91 9953548258
+    </p>
+
+    <p>
+        ✉️ info@royalfitness.com
+    </p>
+
+</section>
+
+
+<!-- ================= LOGIN ================= -->
+
+<section class="auth-section"
+         id="login">
+
+    <div class="auth-box">
+
+        <div class="logo">
+            ROYAL<span>FITNESS</span>
+        </div>
+
+        <h2>
+            Welcome Back
+        </h2>
+
+        <p>
+            Login to your account
+        </p>
+
+
+        <form action="/login"
+              method="POST">
+
+            <input
+                type="text"
+                name="username"
+                placeholder="Username"
+                required
+            >
+
+            <input
+                type="password"
+                name="password"
+                placeholder="Password"
+                required
+            >
+
+            <button type="submit">
+                LOGIN
+            </button>
+
+        </form>
+
+
+        <div class="switch">
+
+            Don't have an account?
+
+            <span onclick="showRegister()">
+                Register
+            </span>
+
+        </div>
+
+
+        <div class="close"
+             onclick="hideAuth()">
+
+            ← Back to Website
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= REGISTER ================= -->
+
+<section class="auth-section"
+         id="register">
+
+    <div class="auth-box">
+
+        <div class="logo">
+            ROYAL<span>FITNESS</span>
+        </div>
+
+        <h2>
+            Create Account
+        </h2>
+
+        <p>
+            Join Royal Fitness today
+        </p>
+
+
+        <form action="/register"
+              method="POST">
+
+            <input
+                type="text"
+                name="username"
+                placeholder="Choose Username"
+                required
+            >
+
+            <input
+                type="password"
+                name="password"
+                placeholder="Create Password"
+                required
+            >
+
+            <button type="submit">
+                REGISTER
+            </button>
+
+        </form>
+
+
+        <div class="switch">
+
+            Already have an account?
+
+            <span onclick="showLogin()">
+                Login
+            </span>
+
+        </div>
+
+
+        <div class="close"
+             onclick="hideAuth()">
+
+            ← Back to Website
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="logo">
+        ROYAL<span>FITNESS</span>
+    </div>
+
+    <p>
+        © 2026 Royal Fitness. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+function showLogin(){
+
+    document.getElementById("login").style.display="flex";
+
+    document.getElementById("register").style.display="none";
+
+    window.scrollTo(0,0);
+}
+
+
+function showRegister(){
+
+    document.getElementById("register").style.display="flex";
+
+    document.getElementById("login").style.display="none";
+
+    window.scrollTo(0,0);
+}
+
+
+function hideAuth(){
+
+    document.getElementById("login").style.display="none";
+
+    document.getElementById("register").style.display="none";
+
+    window.location.href="/";
+}
+
+</script>
+
+
+</body>
+
+</html>
